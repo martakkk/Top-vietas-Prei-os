@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerija">
+    <h2 class="section-title">Fotogalerija</h2>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop" alt="Galerija 1">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop" alt="Galerija 2">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Galerija 3">
+      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1200&auto=format&fit=crop" alt="Galerija 4">
+    </div>
+  </section>
+
+  <section id="aptauja">
+    <h2 class="section-title">Aptauja</h2>
+
+    <div class="survey">
+      <form id="surveyForm">
+        <label for="name">Tavs vārds</label>
+        <input type="text" id="name" placeholder="Ievadi savu vārdu" required>
+
+        <label for="place">Kura vieta tev patīk visvairāk?</label>
+        <select id="place" required>
+          <option value="">-- Izvēlies vietu --</option>
+          <option>Preiļu estrāde</option>
+          <option>Preiļu parks</option>
+          <option>Preiļu pils</option>
+          <option>Estrādes apkārtne</option>
+        </select>
+
+        <label for="comment">Komentārs</label>
+        <textarea id="comment" rows="4" placeholder="Tavs komentārs..."></textarea>
+
+        <button type="submit">Nosūtīt</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+  </section>
+
+  <section id="kontakti">
+    <h2 class="section-title">Kontakti</h2>
+
+    <div class="survey">
+      <p><strong>E-pasts:</strong> info@preiluvietas.lv</p>
+      <p><strong>Tālrunis:</strong> +371 20000000</p>
+      <p><strong>Adrese:</strong> Preiļi, Latvija</p>
+      <br>
+      <p>
+        Seko jaunumiem un iepazīsti skaistākās vietas Preiļos!
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Top vietas Preiļos | Izveidoja skolēns mācību darbam</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById('surveyForm');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const place = document.getElementById('place').value;
+
+      result.innerHTML = `${name}, paldies par aptaujas aizpildīšanu! Tava iecienītākā vieta ir: ${place}.`;
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
